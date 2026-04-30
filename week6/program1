@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class node
+{
+	public:
+		int data;
+		node *link;
+};
+int main()
+{
+	int n;
+	node *h=NULL,*cn=NULL,*t=NULL;
+	//first node
+	h=new node;
+	cout<<"enter value";
+	cin>>n;
+	h->data=n;
+	cn->link=NULL;
+	//second node 
+	cn=new node;
+	cout<<"enter node value";
+	cin>>n;
+	cn->data=n;
+	cn->link=NULL;
+	t=h;
+	t->link=cn;
+	//third node
+	cout<<"enter  value";
+	cin>>n;
+	cn=new node;
+	cn->data=n;
+	cn->link=NULL;
+	t=t->link;
+	t->link=cn;
+	
+	t=h;
+	cout<<t->data;
+	t=t->link;
+	cout<<t->data;
+		t=t->link;
+	cout<<t->link;
+	
+	
+	
+}
