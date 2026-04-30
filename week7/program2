@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class node
+{
+	public:
+		int data;
+		node *link;
+};
+int main()
+{
+	node *h=NULL,*t=NULL,*cn=NULL;
+	int v;
+	do
+	{
+		cout<<"enter node data";
+		cin>>v;
+		cn=new node();
+		cn->data=v;
+		cn->link=NULL;
+		if(h==NULL)
+		{
+			h=cn;
+			t=cn;
+		}
+		else
+		{
+			t->link=cn;
+			t=cn;
+		}
+		cout<<"do you want to add another node(0/1)";
+		cin>>v;
+	}while(v);
+	//displaying the linked list
+	t=h;
+	cout<<"linked list data:\n";
+	while(t!=NULL)
+	{
+		cout<<t->data<<" ";
+		t=t->link;
+	}
+	//insertionm of a new node in the linked list 
+	t=h;
+		cout<<"enter new node data";
+		cin>>v;
+		cn=new node();
+		cn->data=v;
+		cn->link=t;
+		h=cn;
+	t=h;
+	cout<<"new linked list data:";
+	while(t!=NULL)
+	{
+		cout<<t->data<<" ";
+		t=t->link;
+	}	
+}
